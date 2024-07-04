@@ -1,0 +1,19 @@
+/* iframe區域 */
+.external-box {
+  width: 100%;
+  height: 450px;
+}
+iframe {
+  width: 100%;
+  height: 100%;
+}
+@media (max-width: 768px) {
+  .external-box {
+    height: 50vw;
+  }
+}
+@media (max-width: 767px) {
+  .external-box {
+    height: 70vw;
+  }
+}
