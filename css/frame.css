@@ -790,12 +790,6 @@ body {
   }
 }
 
-@media (max-width: 499px) {
-  .site-body {
-    overflow-y: auto;
-  }
-}
-
 .site-main,
 .site-content {
   width: 100%;

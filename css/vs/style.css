@@ -87,7 +87,7 @@ img {
           mask-position: center;
   -webkit-mask-size: cover;
           mask-size: cover;
-  animation: flash 4s infinite ease;
+  animation: flash 2s infinite linear;
   mix-blend-mode: overlay;
 }
 @keyframes flash {
@@ -495,6 +495,7 @@ img {
     width: 130px;
     height: auto;
     top: -38px;
+    filter: none;
   }
   .wrapper .bottom-container .box p strong {
     font-size: 1.4rem;
@@ -529,7 +530,7 @@ img {
     margin-right: 20%;
   }
   .event-desc .block {
-    width: 95vw;
+    width: 90vw;
   }
   .event-desc .block .value-area {
     grid-template-rows: repeat(2, 1fr);

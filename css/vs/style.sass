@@ -83,7 +83,7 @@ $orange: #FF4D00
                     background-position: top center
                     mask-position: center
                     mask-size: cover
-                    animation: flash 4s infinite ease
+                    animation: flash 2s infinite linear
                     mix-blend-mode: overlay
                 @keyframes flash
                     0%
@@ -427,6 +427,7 @@ $orange: #FF4D00
                 .title
                     +size(130px,auto)
                     top: -38px
+                    filter: none
                 p
                     strong
                         font-size: 1.4rem
@@ -456,7 +457,7 @@ $orange: #FF4D00
 
     .event-desc
         .block
-            width: calc( 100vw - 5vw )
+            width: calc( 100vw - 10vw )
             .value-area
                 grid-template-rows: repeat(2,1fr)
                 grid-gap: 15px
