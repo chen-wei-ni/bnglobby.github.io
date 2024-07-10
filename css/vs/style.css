@@ -191,7 +191,7 @@ img {
   display: grid;
 }
 .event-desc .block {
-  position: static;
+  position: relative;
   max-width: 750px;
   width: calc(100vw - 100px);
   height: calc(100vh - 200px);

@@ -4,11 +4,11 @@ const popup = document.querySelector(".event-desc");
 openBtn.addEventListener("click", (e) => {
     popup.classList.add("open");
     popup.animate(scaleAnimate, scaleTiming);
-    document.body.style.overflow = "hidden"
+    // document.body.style.overflow = "hidden"
 })
 closeBtn.addEventListener("click", () => {
     popup.classList.remove("open");
-    document.body.style.overflow = "";
+    // document.body.style.overflow = "";
 })
 
 const scaleAnimate = [
