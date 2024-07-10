@@ -1,0 +1,444 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap')
+*
+    margin: 0
+    padding: 0
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+
+img
+    width: 100%
+    height: auto
+
+$blue: #2455FF
+$yellow: #FFC700
+$red: #D11010
+$orange: #FF4D00
+
+@mixin size($w,$h:$w)
+    width: $w
+    height: $h
+
+.external-box
+    position: relative
+    margin: 0 auto
+    width: 1070px
+
+.wrapper
+    +size(100%)
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    padding: 10px 0 0 0
+    font-family: "Rubik", sans-serif
+    .top-container
+        position: relative
+        +size(894px,279.38px)
+        background: url("../../images/vs/bn.webp") top center no-repeat
+        background-size: contain
+        text-align: center
+        h1
+            font-size: 4rem
+            font-weight: 700
+            color: $red
+            text-shadow: 0 5px 0 $yellow
+            margin-top: 160px
+    .fishIcon
+        position: absolute
+        right: 11%
+        bottom: 4%
+
+    .bottom-container
+        // position: relative
+        display: flex
+        justify-content: center
+        margin-top: -12px
+
+        .box
+            +size(300px,90px)
+            background-color: #fff
+            position: absolute
+            display: flex
+            flex-direction: column
+            justify-content: flex-end
+            align-items: center
+            border-radius: 100vmax
+            .title
+                +size(162px,60px)
+                position: absolute
+                top: -50px
+                filter: drop-shadow(5px 5px 5px rgba(#000,0.5))
+            p
+                display: flex
+                justify-content: center
+                strong
+                    line-height: 1.5
+                    display: block
+                    font-size: 28px
+            .number-of-people
+                display: inline-flex
+                justify-content: center
+                align-items: flex-end
+                +size(100%,35%)
+                border-radius: 0 0 100vmax 100vmax
+                figure
+                    width: 18px
+                    margin: 0 5px
+                span
+                    color: #fff
+                    line-height: 1.4
+                    font-weight: 700
+                    text-shadow: 0 0 2px #000
+        .vs-icon
+            margin-top: -5px
+            width: 70px
+            z-index: 3
+            animation: scaleVs 2s infinite
+            @keyframes scaleVs
+
+                50%
+                    transform: scale(1.15)
+
+        .jackpot
+            border: 6px solid $blue
+            right: 49%
+            z-index: 1
+            strong
+                color: $blue
+            .number-of-people
+                background-color: $blue
+
+        .crazy-time
+            border: 6px solid $yellow
+            left: 49%
+            z-index: 2
+            strong
+                color: $orange
+            .number-of-people
+                flex-direction: row-reverse
+                background-color: $yellow
+        &.a-mode
+            .jackpot
+                right: inherit
+                left: 49%
+                z-index: 2
+            .crazy-time
+                left: inherit
+                right: 49%
+                z-index: 1
+
+.btn
+    position: absolute
+    left: 10%
+    bottom: 5%
+    button
+        display: inline-flex
+        align-items: center
+        justify-content: center
+        background-color: #000
+        color: #9d9d9d
+        padding: 1rem 1.2rem 0.9rem 1.2rem
+        border: 2px solid #9d9d9d
+        border-radius: 15px
+        font-size: 1rem
+        cursor: pointer
+        transition: all 0.3s
+        span
+            display: block
+            width: 15px
+            margin-right: 10px
+        &:active
+            background-color: #2e2e2e
+            transform: translateY(2px)
+        &:hover
+            border-color: #3ee9a5
+            color: #3ee9a5
+            transition: all 0.3s
+.event-desc
+    width: 0%
+    height: 0vh
+    position: fixed
+    display: none
+    place-content: center
+    inset: 0px
+    background-color: rgba(#000,0)
+    backdrop-filter: blur(3px)
+    z-index: 10
+    font-family: "Rubik", sans-serif
+    &.open
+        display: grid
+        width: 100%
+        height: 100vh
+        transition: all 0.3s
+    .block
+        max-width: 750px
+        +size(calc(100vw - 100px),calc(100vh - 200px))
+        background-color: #000
+        color: #fff
+        border: 4px solid #3ee9a5
+        border-radius: 15px
+        padding: 2.5%
+        overflow-y: scroll
+
+        &::-webkit-scrollbar
+            width: 6px
+            height: 6px
+
+        &::-webkit-scrollbar-track
+            margin: 5px 0
+
+        &::-webkit-scrollbar-thumb
+            background: rgba(#fff,0.3)
+            border-radius: 10px
+
+        .value-area
+            display: grid
+            grid-template-columns: repeat(2,1fr)
+            grid-gap: 15px
+
+        .value-area >   div
+            display: flex
+            align-items: center
+            justify-content: space-between
+            border: 2px solid #9d9d9d
+            border-radius: 15px
+            padding: 1.2rem 0.75rem
+
+            p
+                font-size: 1rem
+
+            p.g-number
+                color: #3ee9a5
+                font-size: 1.5rem
+                line-height: 0.8
+
+            &.es-bonus .right-side
+                text-align: right
+                span
+                    font-size: 0.8rem
+                    color: yellow
+
+            &.contribution
+                width: 100%
+                display: grid
+                justify-content: space-between
+                grid-template-areas: "label p " "progress progress"
+                row-gap: 5px
+                label
+                    grid-area: label
+                p
+                    grid-area: p
+                progress
+                    position: relative
+                    grid-area: progress
+                    width: 100%
+                    -webkit-appearance: none
+                    -moz-appearance: none
+                    border-radius: 20px
+                    border: 2px solid #666666
+                    overflow: hidden
+                    height: 12px
+                    &::-webkit-progress-value
+                        background-color: #3ee9a5
+
+                    &::-moz-progress-value
+                        background-color: #3ee9a5
+
+                    &::-webkit-progress-bar
+                        background-color: #343333
+
+                    &::-moz-progress-bar
+                        background-color: #343333
+
+        button.win_awards
+            font-size: 1.5rem
+            font-weight: bold
+            background-color: #3ee9a5
+            cursor: pointer
+            border-radius: 15px
+            border: 0
+            transition: filter .3s
+            &:disabled
+                color: #343333
+                background-color: #666666
+                border: solid 6px #9d9d9d
+                cursor: not-allowed
+            &:hover
+                filter: brightness(120%)
+                transition: filter .3s
+
+        .all-list
+            display: grid
+            grid-template-columns: 1fr
+            row-gap: 20px
+            &::before
+                content: ""
+                display: block
+                +size(100%,2px)
+                background-color: #3ee9a5
+                margin: 25px 0 10px 0
+            .event-details,.announcement
+                p
+                    color: #3ee9a5
+                    margin-bottom: 5px
+                ul
+                    list-style: disc
+                    padding-left: 40px
+                    ol
+                        list-style: decimal
+                        padding-left: 20px
+                    li
+                        line-height: 1.8
+                        font-size: .9rem
+                        span
+                            color: #3ee9a5
+                        &::marker
+                            font-size: 12px
+                            color: #3ee9a5
+
+    .close-btn
+        +size(50px)
+        font-size: 2rem
+        color: rgba(#fff,0.7)
+        text-align: center
+        padding-top: 5px
+        margin: 25px auto
+        border: 3px solid rgba(#fff,0.7)
+        border-radius: 50%
+        cursor: pointer
+        &:hover
+            color: rgba(#fff,0.3)
+            border-color: rgba(#fff,0.3)
+            transition: all 0.3s
+
+@media screen and ( max-width: 1170px )
+    .external-box
+        width: 100%
+    .wrapper
+        .fishIcon
+            right: initial
+            left: 72%
+    .btn
+        left: 50%
+        transform: translateX(-425px)
+@media screen and ( max-width: 900px )
+    .wrapper
+        .top-container
+            min-width: 600px
+            width: 100vw
+            height: 30vw
+            h1
+                font-size: 3.5rem
+                margin-top: 18%
+        .fishIcon
+            width: 180px
+            bottom: 34%
+        .bottom-container
+            margin-top: 20px
+    .btn
+        position: static
+        transform: none
+        width: 100%
+        padding: 0 5% 0% 5%
+        button
+            width: 100%
+
+@media screen and ( max-width: 767px )
+    .external-box
+        // height: 70vw
+    .wrapper
+        .top-container
+            min-width: initial
+            h1
+                font-size: 3rem
+                margin-top: 17.2%
+        .fishIcon
+            display: none
+        .bottom-container
+            margin-top: 5%
+            .box
+                width: 50vw
+                .title
+                    top: -43px
+                    // position: static
+                .number-of-people
+                    width: 99%
+    .btn
+        margin: 15px 0 10px 0
+        button
+            padding: 10px
+    .event-desc
+        .block
+            .value-area >   div
+                flex-direction: column
+                justify-content: space-evenly
+                p.g-number
+                    margin-top: 10px
+                &.es-bonus .right-side
+                    text-align: center
+@media screen and ( max-width: 500px )
+    .wrapper
+        .top-container
+            h1
+                font-size: 2rem
+        .bottom-container
+            .box
+                height: 75px
+                .title
+                    width: 130px
+                    top: -38px
+                p
+                    strong
+                        font-size: 1.4rem
+            .jackpot
+                right: 47%
+                p
+                    margin-right: 20%
+            .crazy-time
+                left: 47%
+                p
+                    margin-left: 20%
+
+            .vs-icon
+                width: 50px
+
+            &.a-mode
+                .jackpot
+                    left: 47%
+                    p
+                        margin-right: initial
+                        margin-left: 20%
+                .crazy-time
+                    right: 47%
+                    p
+                        margin-left: initial
+                        margin-right: 20%
+
+    .event-desc
+        .block
+            width: calc( 100vw - 5vw )
+            .value-area
+                grid-template-rows: repeat(2,1fr)
+                grid-gap: 15px
+                margin-top: 5px
+            .value-area >   div
+                padding: .5rem
+
+                &.es-bonus .right-side
+                    span
+                        font-size: 0.6rem
+            .all-list
+                &::before
+                    margin: 25px 0 0 0
+
+@media screen and ( max-width: 375px )
+    .wrapper
+        .top-container
+            h1
+                font-size: 1.8rem
+@media screen and ( max-width: 360px )
+    .wrapper
+        .top-container
+            h1
+                font-size: 1.5rem
