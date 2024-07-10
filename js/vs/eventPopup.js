@@ -2,13 +2,13 @@ const openBtn = document.querySelector(".btn");
 const closeBtn = document.querySelector(".close-btn");
 const popup = document.querySelector(".event-desc");
 openBtn.addEventListener("click", (e) => {
-    popup.classList.add("open");
+    popup.style.display = "grid";
     popup.animate(scaleAnimate, scaleTiming);
-    // document.body.style.overflow = "hidden"
+    document.body.style.overflow = "hidden"
 })
 closeBtn.addEventListener("click", () => {
-    popup.classList.remove("open");
-    // document.body.style.overflow = "";
+    popup.style.display = "none";
+    document.body.style.overflow = "";
 })
 
 const scaleAnimate = [

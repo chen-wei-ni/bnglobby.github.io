@@ -187,29 +187,30 @@ img {
   z-index: 10;
   font-family: "Rubik", sans-serif;
 }
-.event-desc.open {
-  display: grid;
-}
 .event-desc .block {
   position: relative;
   max-width: 750px;
   width: calc(100vw - 100px);
   height: calc(100vh - 200px);
   background-color: #000;
-  color: #fff;
   border: 4px solid #3ee9a5;
   border-radius: 15px;
   padding: 2.5%;
+}
+.event-desc .block .content {
+  width: 100%;
+  height: 100%;
+  color: #fff;
   overflow: auto;
 }
-.event-desc .block::-webkit-scrollbar {
+.event-desc .block .content::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
-.event-desc .block::-webkit-scrollbar-track {
+.event-desc .block .content::-webkit-scrollbar-track {
   margin: 5px 0;
 }
-.event-desc .block::-webkit-scrollbar-thumb {
+.event-desc .block .content::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.3);
   border-radius: 10px;
 }
@@ -419,9 +420,6 @@ img {
   .btn button {
     padding: 10px;
   }
-  .event-desc .block {
-    -webkit-overflow-scrolling: touch !important;
-  }
   .event-desc .block .value-area > div {
     flex-direction: column;
     justify-content: space-evenly;
@@ -431,6 +429,12 @@ img {
   }
   .event-desc .block .value-area > div.es-bonus .right-side {
     text-align: center;
+  }
+  .event-desc .close-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    margin: 15px auto;
   }
 }
 @media screen and (max-width: 500px) {
