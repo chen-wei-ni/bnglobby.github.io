@@ -208,6 +208,7 @@ img {
   overflow-x: hidden;
   overflow: scroll;
   padding: 2.5%;
+  -webkit-overflow-scrolling: touch;
 }
 .event-desc .block .content::-webkit-scrollbar {
   width: 6px;
@@ -426,9 +427,6 @@ img {
   .btn button {
     padding: 10px;
   }
-  .event-desc .block {
-    height: 600px;
-  }
   .event-desc .block .value-area > div {
     flex-direction: column;
     justify-content: space-evenly;
@@ -491,6 +489,9 @@ img {
   }
   .event-desc .block {
     width: 95vw;
+  }
+  .event-desc .block .content {
+    height: 600px;
   }
   .event-desc .block .value-area {
     grid-template-rows: repeat(2, 1fr);

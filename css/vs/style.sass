@@ -185,6 +185,7 @@ $orange: #FF4D00
             overflow-x: hidden
             overflow: scroll
             padding: 2.5%
+            -webkit-overflow-scrolling: touch
             &::-webkit-scrollbar
                 width: 6px
                 height: 6px
@@ -374,7 +375,6 @@ $orange: #FF4D00
             padding: 10px
     .event-desc
         .block
-            height: 600px
             .value-area >   div
                 flex-direction: column
                 justify-content: space-evenly
@@ -427,6 +427,8 @@ $orange: #FF4D00
     .event-desc
         .block
             width: calc( 100vw - 5vw )
+            .content
+                height: 600px
             .value-area
                 grid-template-rows: repeat(2,1fr)
                 grid-gap: 15px
