@@ -1,14 +1,16 @@
 const openBtn = document.querySelector(".btn");
 const closeBtn = document.querySelector(".close-btn");
 const popup = document.querySelector(".event-desc");
+const content = document.querySelector(".content")
 openBtn.addEventListener("click", (e) => {
     popup.style.display = "grid";
     popup.animate(scaleAnimate, scaleTiming);
-    document.body.style.overflow = "hidden"
+    lenis.stop();
 })
 closeBtn.addEventListener("click", () => {
     popup.style.display = "none";
     document.body.style.overflow = "";
+    lenis.start();
 })
 
 const scaleAnimate = [
@@ -29,5 +31,6 @@ function raf(time) {
     lenis.raf(time)
     requestAnimationFrame(raf)
 }
+
 
 requestAnimationFrame(raf)
