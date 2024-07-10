@@ -203,6 +203,7 @@ img {
   border-radius: 15px;
   padding: 2.5%;
   overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 .event-desc .block::-webkit-scrollbar {
   width: 6px;
