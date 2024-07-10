@@ -85,7 +85,6 @@ body {
     Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  -webkit-overflow-scrolling: touch;
 }
 
 html:lang(vi-vn) body {

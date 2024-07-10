@@ -175,8 +175,8 @@ img {
 }
 
 .event-desc {
-  width: 0%;
-  height: 0vh;
+  width: 100%;
+  height: 100vh;
   position: fixed;
   display: none;
   place-content: center;
@@ -189,11 +189,9 @@ img {
 }
 .event-desc.open {
   display: grid;
-  width: 100%;
-  height: 100vh;
-  transition: all 0.3s;
 }
 .event-desc .block {
+  position: static;
   max-width: 750px;
   width: calc(100vw - 100px);
   height: calc(100vh - 200px);
@@ -202,8 +200,7 @@ img {
   border: 4px solid #3ee9a5;
   border-radius: 15px;
   padding: 2.5%;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
+  overflow: auto;
 }
 .event-desc .block::-webkit-scrollbar {
   width: 6px;
@@ -421,6 +418,9 @@ img {
   }
   .btn button {
     padding: 10px;
+  }
+  .event-desc .block {
+    -webkit-overflow-scrolling: touch !important;
   }
   .event-desc .block .value-area > div {
     flex-direction: column;

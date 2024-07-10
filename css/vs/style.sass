@@ -156,8 +156,8 @@ $orange: #FF4D00
             color: #3ee9a5
             transition: all 0.3s
 .event-desc
-    width: 0%
-    height: 0vh
+    width: 100%
+    height: 100vh
     position: fixed
     display: none
     place-content: center
@@ -168,10 +168,8 @@ $orange: #FF4D00
     font-family: "Rubik", sans-serif
     &.open
         display: grid
-        width: 100%
-        height: 100vh
-        transition: all 0.3s
     .block
+        position: static
         max-width: 750px
         +size(calc(100vw - 100px),calc(100vh - 200px))
         background-color: #000
@@ -179,8 +177,7 @@ $orange: #FF4D00
         border: 4px solid #3ee9a5
         border-radius: 15px
         padding: 2.5%
-        overflow-y: scroll
-        -webkit-overflow-scrolling: touch
+        overflow: auto
 
         &::-webkit-scrollbar
             width: 6px
@@ -371,6 +368,7 @@ $orange: #FF4D00
             padding: 10px
     .event-desc
         .block
+            -webkit-overflow-scrolling: touch !important
             .value-area >   div
                 flex-direction: column
                 justify-content: space-evenly
