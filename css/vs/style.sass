@@ -75,19 +75,21 @@ $orange: #FF4D00
                 &::after
                     content: ""
                     position: absolute
+                    top: 0
+                    left: 0
                     +size(100%)
-                    background: url('../images/events/flash.png') center no-repeat
+                    background: url('../../images/frame/light.png') center no-repeat
                     background-size: cover
                     background-position: top center
                     mask-position: center
                     mask-size: cover
-                    animation: flashCoin 5s infinite ease
+                    animation: flash 4s infinite ease
                     mix-blend-mode: overlay
                 @keyframes flash
                     0%
-                        background-position: -1900px 0px
+                        background-position: -100px 0px
 
-                    50%
+                    66%
                         background-position: 200px 0px
 
                     100%
@@ -134,7 +136,7 @@ $orange: #FF4D00
                 background-color: $blue
             .title
                 &::after
-                    mask-image: url('../images/vs/jp.png')
+                    mask-image: url('../../images/vs/jp.png')
 
         .crazy-time
             border: 6px solid $yellow
@@ -147,7 +149,7 @@ $orange: #FF4D00
                 background-color: $yellow
             .title
                 &::after
-                    mask-image: url('../images/vs/ct.png')
+                    mask-image: url('../../images/vs/ct.png')
         &.a-mode
             .jackpot
                 right: inherit
