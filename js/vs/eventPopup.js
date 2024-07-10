@@ -7,7 +7,10 @@ openBtn.addEventListener("click", (e) => {
     document.body.style.overflow = "hidden"
 })
 closeBtn.addEventListener("click", () => {
-    popup.style.display = "none";
+    popup.animate(scaleAnimate2, scaleTiming);
+    setTimeout(() => {
+        popup.style.display = "none";
+    }, 100)
     document.body.style.overflow = "";
 })
 
@@ -15,7 +18,11 @@ const scaleAnimate = [
     { transform: 'scale(0)' },
     { transform: ' scale(1)' },
 ];
+const scaleAnimate2 = [
+    { transform: 'scale(1)' },
+    { transform: ' scale(0)' },
+];
 const scaleTiming = {
-    duration: 50,
+    duration: 100,
     iterations: 1,
 }

@@ -148,7 +148,7 @@ img {
 .btn {
   position: absolute;
   left: 10%;
-  bottom: 5%;
+  bottom: 9%;
 }
 .btn button {
   display: inline-flex;
@@ -181,8 +181,8 @@ img {
 .event-desc {
   width: 100%;
   height: 100vh;
-  position: absolute;
   display: none;
+  position: absolute;
   place-content: center;
   inset: 0px;
   background-color: rgba(0, 0, 0, 0);
@@ -194,7 +194,7 @@ img {
 .event-desc .block {
   max-width: 750px;
   width: calc(100vw - 100px);
-  height: calc(100vh - 200px);
+  height: calc(100vh - 180px);
   background-color: #000;
   border: 4px solid #3ee9a5;
   border-radius: 15px;
@@ -292,15 +292,18 @@ img {
   border: 0;
   transition: filter 0.3s;
 }
+.event-desc .block button.win_awards:hover {
+  filter: brightness(120%);
+  transition: filter 0.3s;
+}
 .event-desc .block button.win_awards:disabled {
   color: #343333;
   background-color: #666666;
   border: solid 6px #9d9d9d;
-  cursor: not-allowed;
+  cursor: initial;
 }
-.event-desc .block button.win_awards:hover {
-  filter: brightness(120%);
-  transition: filter 0.3s;
+.event-desc .block button.win_awards:disabled:hover {
+  filter: brightness(100%);
 }
 .event-desc .block .all-list {
   display: grid;
@@ -345,7 +348,8 @@ img {
   color: rgba(255, 255, 255, 0.7);
   text-align: center;
   padding-top: 5px;
-  margin: 25px auto;
+  margin: 0 auto;
+  margin-top: 10px;
   border: 3px solid rgba(255, 255, 255, 0.7);
   border-radius: 50%;
   cursor: pointer;
@@ -425,6 +429,9 @@ img {
   .btn button {
     padding: 10px;
   }
+  .event-desc .block {
+    height: 83vh;
+  }
   .event-desc .block .value-area > div {
     flex-direction: column;
     justify-content: space-evenly;
@@ -439,7 +446,6 @@ img {
     width: 40px;
     height: 40px;
     font-size: 1.5rem;
-    margin: 15px auto;
   }
 }
 @media screen and (max-width: 500px) {
