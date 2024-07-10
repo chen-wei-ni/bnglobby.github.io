@@ -493,6 +493,7 @@ img {
   }
   .wrapper .bottom-container .box .title {
     width: 130px;
+    height: auto;
     top: -38px;
   }
   .wrapper .bottom-container .box p strong {
