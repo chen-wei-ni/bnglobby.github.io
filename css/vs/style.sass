@@ -161,8 +161,7 @@ $orange: #FF4D00
 .event-desc
     width: 100%
     height: 100vh
-    height: -webkit-fill-available
-    position: fixed
+    position: absolute
     display: none
     place-content: center
     inset: 0px
@@ -172,20 +171,19 @@ $orange: #FF4D00
     font-family: "Rubik", sans-serif
 
     .block
-        position: relative
         max-width: 750px
         +size(calc(100vw - 100px),calc(100vh - 200px))
         background-color: #000
         border: 4px solid #3ee9a5
         border-radius: 15px
-
         .content
             +size(100%)
             color: #fff
-            overflow-x: hidden
-            overflow: scroll
-            padding: 2.5%
             -webkit-overflow-scrolling: touch
+            overflow-x: hidden
+            overflow-y: scroll
+            padding: 2.5%
+
             &::-webkit-scrollbar
                 width: 6px
                 height: 6px
@@ -427,8 +425,6 @@ $orange: #FF4D00
     .event-desc
         .block
             width: calc( 100vw - 5vw )
-            .content
-                height: 600px
             .value-area
                 grid-template-rows: repeat(2,1fr)
                 grid-gap: 15px

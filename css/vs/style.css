@@ -181,8 +181,7 @@ img {
 .event-desc {
   width: 100%;
   height: 100vh;
-  height: -webkit-fill-available;
-  position: fixed;
+  position: absolute;
   display: none;
   place-content: center;
   inset: 0px;
@@ -193,7 +192,6 @@ img {
   font-family: "Rubik", sans-serif;
 }
 .event-desc .block {
-  position: relative;
   max-width: 750px;
   width: calc(100vw - 100px);
   height: calc(100vh - 200px);
@@ -205,10 +203,10 @@ img {
   width: 100%;
   height: 100%;
   color: #fff;
-  overflow-x: hidden;
-  overflow: scroll;
-  padding: 2.5%;
   -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding: 2.5%;
 }
 .event-desc .block .content::-webkit-scrollbar {
   width: 6px;
@@ -489,9 +487,6 @@ img {
   }
   .event-desc .block {
     width: 95vw;
-  }
-  .event-desc .block .content {
-    height: 600px;
   }
   .event-desc .block .value-area {
     grid-template-rows: repeat(2, 1fr);
