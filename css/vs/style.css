@@ -71,6 +71,7 @@ img {
   height: 60px;
   position: absolute;
   top: -50px;
+  animation: titleScale 1.5s infinite alternate ease;
   filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
 }
 .wrapper .bottom-container .box .title::after {
@@ -99,6 +100,20 @@ img {
   }
   100% {
     background-position: 500px 0;
+  }
+}
+@keyframes titleScale {
+  0% {
+    transform: scale(1);
+  }
+  5% {
+    transform: scale(1.1);
+  }
+  10% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 .wrapper .bottom-container .box p {
@@ -242,7 +257,7 @@ img {
   -webkit-overflow-scrolling: touch;
   overflow-x: hidden;
   overflow-y: scroll;
-  padding: 2.5%;
+  padding: 3.5%;
 }
 .event-desc .block .content::-webkit-scrollbar {
   width: 6px;
@@ -335,7 +350,7 @@ img {
 .event-desc .block button.win_awards:disabled {
   color: #343333;
   background-color: #666666;
-  border: solid 6px #9d9d9d;
+  border: solid 6px #333;
   cursor: initial;
 }
 .event-desc .block button.win_awards:disabled:hover {
@@ -497,6 +512,9 @@ img {
     top: -38px;
     filter: none;
   }
+  .wrapper .bottom-container .box .title::after {
+    height: 95%;
+  }
   .wrapper .bottom-container .box p strong {
     font-size: 1.4rem;
   }
@@ -534,7 +552,7 @@ img {
   }
   .event-desc .block {
     width: 95vw;
-    height: 77vh;
+    height: 77dvh;
   }
   .event-desc .block .value-area {
     grid-template-rows: repeat(2, 1fr);
