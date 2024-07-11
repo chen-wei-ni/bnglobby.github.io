@@ -391,8 +391,8 @@ img {
   cursor: pointer;
 }
 .event-desc .close-btn:hover {
-  color: rgba(255, 255, 255, 0.3);
-  border-color: rgba(255, 255, 255, 0.3);
+  color: rgba(62, 233, 165, 0.8);
+  border-color: rgba(62, 233, 165, 0.8);
   transition: all 0.3s;
 }
 
