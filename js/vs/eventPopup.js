@@ -1,9 +1,12 @@
 const openBtn = document.querySelector(".btn");
 const closeBtn = document.querySelector(".close-btn");
 const popup = document.querySelector(".event-desc");
+
 openBtn.addEventListener("click", (e) => {
+    const block = popup.querySelector(".block");
     popup.style.display = "grid";
-    popup.animate(scaleAnimate, scaleTiming);
+    popup.animate(opacityAnimate, scaleTiming);
+    block.animate(scaleAnimate, scaleTiming)
     document.body.style.overflow = "hidden"
 })
 closeBtn.addEventListener("click", () => {
@@ -12,12 +15,16 @@ closeBtn.addEventListener("click", () => {
     document.body.style.overflow = "";
 })
 
+const opacityAnimate = [
+    { opacity: "0" },
+    { opacity: "1" },
+];
 const scaleAnimate = [
-    { transform: 'scale(0)' },
-    { transform: ' scale(1)' },
+    { transform: "scale(0.5)" },
+    { transform: "scale(1)" },
 ];
 
 const scaleTiming = {
-    duration: 100,
+    duration: 200,
     iterations: 1,
 }

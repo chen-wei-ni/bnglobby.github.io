@@ -71,7 +71,7 @@ img {
   height: 60px;
   position: absolute;
   top: -50px;
-  animation: titleScale 1.5s infinite alternate ease;
+  animation: titleScale 2.5s infinite alternate ease;
   filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
 }
 .wrapper .bottom-container .box .title::after {
@@ -548,11 +548,11 @@ img {
     margin-right: 20%;
   }
   .event-desc {
-    padding-bottom: 12%;
+    padding-bottom: 5%;
   }
   .event-desc .block {
     width: 95vw;
-    height: 77dvh;
+    height: 80dvh;
   }
   .event-desc .block .value-area {
     grid-template-rows: repeat(2, 1fr);
